@@ -1,0 +1,22 @@
+<p>items-list works!</p>
+
+<table mat-table [dataSource]="cats">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element"><a [routerLink]="['/cat', element.id]">{{ element.id }}</a>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="width">
+        <th mat-header-cell *matHeaderCellDef>WIDTH</th>
+        <td mat-cell *matCellDef="let element">{{ element.width }}</td>
+      </ng-container>
+      
+    <ng-container matColumnDef="height">
+        <th mat-header-cell *matHeaderCellDef>HIEGHT</th>
+        <td mat-cell *matCellDef="let element">{{ element.height }}</td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['id','width', 'height']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['id','width','height']"></tr>
+</table>

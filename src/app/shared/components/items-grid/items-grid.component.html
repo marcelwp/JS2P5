@@ -1,0 +1,22 @@
+<div *ngFor="let cat of cats">
+    <mat-card class="card">
+        <mat-card-header>
+          <div mat-card-avatar class="header-image"></div>
+          <mat-card-title>ID {{ cat.id }}</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src={{cat.url}}
+          alt={{cat.id}}
+        />
+        <mat-card-content>
+          <p>
+            {{ cat.width }} x {{cat.height}}
+          </p>
+          <p>
+            <a [routerLink]="['/cat', cat.id]">Show more</a>
+          </p>
+        </mat-card-content>
+    </mat-card>
+</div>
+  
